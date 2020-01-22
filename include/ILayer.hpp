@@ -8,18 +8,24 @@
 #ifndef ILAYER_HPP_
 #define ILAYER_HPP_
 
-//temporary, until propoer HTTP message classes are defined
-using HTTPRequest = int;
-using HTTPResponse = int;
+#include <optional>
+
 
 namespace Zia
 {
+
+	//temporary, until propoer HTTP message classes are defined
+	using HTTPRequest = int;
+	using HTTPResponse = int;
+
+	constexpr auto	CreateLayerSymbol = "CreateLayer";
+
 	class ILayer {
 		public:
 
 			virtual ~ILayer() = default;
 
-			virtual HTTPResponse	onRequest(const HTTPRequest &request) = 0;
+			virtual std::optional<HTTPResponse>	onRequest(const HTTPRequest &request) = 0;
 	};
 
 } // namespace Zia

@@ -8,12 +8,16 @@
 #ifndef IOVERLAY_HPP_
 #define IOVERLAY_HPP_
 
-//temporary, until propoer HTTP message classes are defined
-using HTTPRequest = int;
-using HTTPResponse = int;
 
 namespace Zia
 {
+
+	//temporary, until propoer HTTP message classes are defined
+	using HTTPRequest = int;
+	using HTTPResponse = int;
+
+	constexpr auto	CreateOverlaySymbol = "CreateOverlay";
+
 	class IOverlay {
 		public:
 
