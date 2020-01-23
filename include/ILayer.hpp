@@ -9,13 +9,14 @@
 #define ILAYER_HPP_
 
 #include <optional>
+#include "Request.hpp"
+#include "Response.hpp"
 
 namespace Zia
 {
 
-	//temporary, until propoer HTTP message classes are defined
-	using HTTPRequest = int;
-	using HTTPResponse = int;
+	using HTTPRequest = HTTP::Request;
+	using HTTPResponse = HTTP::Response;
 
 	///
 	///@brief Symbol used as Layer factory in module loading

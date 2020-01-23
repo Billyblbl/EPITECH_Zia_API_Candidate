@@ -59,9 +59,15 @@ else(STATIC_LIB)
 endif(STATIC_LIB)
 message(STATUS "building as " ${LIB_TYPE})
 #build config
+
+#HTTP
+get_include(HTTP_INCLUDE ./HTTP)
+get_src(HTTP_SRC ./HTTP)
+
 get_include(ZIAAPI_INCLUDE .)
 get_src(ZIAAPI_SRC .)
-add_library(${PROJECT_NAME} ${LIB_TYPE} ${ZIAAPI_SRC})
+add_library(${PROJECT_NAME} ${LIB_TYPE} ${ZIAAPI_SRC} ${HTTP_SRC})
+target_include_directories(${PROJECT_NAME} PUBLIC ${HTTP_INCLUDE})
 target_include_directories(${PROJECT_NAME} PUBLIC ${ZIAAPI_INCLUDE})
 target_link_libraries(${PROJECT_NAME} ${LDLIB})
 

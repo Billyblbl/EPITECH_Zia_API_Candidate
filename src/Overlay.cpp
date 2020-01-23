@@ -24,9 +24,9 @@ namespace Zia
 		return _layer->onRequest(std::forward<HTTPRequest>(request));
 	}
 
-	HTTPResponse	Overlay::onResponse(HTTPResponse &&request)
+	HTTPResponse	Overlay::onResponse(HTTPResponse &&response)
 	{
-		return _layer->onResponse(std::forward<HTTPRequest>(request));
+		return _layer->onResponse(std::forward<HTTPResponse>(response));
 	}
 
 	IOverlay		&Overlay::getHandle()

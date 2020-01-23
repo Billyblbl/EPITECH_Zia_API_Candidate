@@ -8,13 +8,14 @@
 #ifndef IOVERLAY_HPP_
 #define IOVERLAY_HPP_
 
+#include "Request.hpp"
+#include "Response.hpp"
 
 namespace Zia
 {
 
-	//temporary, until propoer HTTP message classes are defined
-	using HTTPRequest = int;
-	using HTTPResponse = int;
+	using HTTPRequest = HTTP::Request;
+	using HTTPResponse = HTTP::Response;
 
 	///
 	///@brief Symbol used as Overlay factory in module loading
