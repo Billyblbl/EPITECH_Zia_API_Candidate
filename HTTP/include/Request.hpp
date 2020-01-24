@@ -10,7 +10,6 @@
 
 #include "Message.hpp"
 
-#define ENUMSTR(e) [e]=#e
 
 namespace HTTP
 {
@@ -31,15 +30,28 @@ namespace HTTP
 			};
 
 			const char	*MethodToken[SIZE] = {
-				ENUMSTR(GET),
-				ENUMSTR(HEAD),
-				ENUMSTR(POST),
-				ENUMSTR(PUT),
-				ENUMSTR(DELETE),
-				ENUMSTR(CONNECT),
-				ENUMSTR(OPTIONS),
-				ENUMSTR(TRACE),
+				"GET",
+				"HEAD",
+				"POST",
+				"PUT",
+				"DELETE",
+				"CONNECT",
+				"OPTIONS",
+				"TRACE",
 			};
+
+	//#define ENUMSTR(e) [e]=#e
+
+	//		const char	*MethodToken[SIZE] = {
+	//			ENUMSTR(GET),
+	//			ENUMSTR(HEAD),
+	//			ENUMSTR(POST),
+	//			ENUMSTR(PUT),
+	//			ENUMSTR(DELETE),
+	//			ENUMSTR(CONNECT),
+	//			ENUMSTR(OPTIONS),
+	//			ENUMSTR(TRACE),
+	//		};
 
 			Request() = default;
 
