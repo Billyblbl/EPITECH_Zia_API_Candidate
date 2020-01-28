@@ -6,7 +6,9 @@ ZIAAPI defines two types of modules :
 
 Layers must implement the `ILayer` interface, while Overlays must implement the `IOverlay` interface.
 
-## Library symbols
+## Module-Side
+
+### Library symbols
 
 To be loadable by a ZIAAPI compatible core, Layer & Overlay modules must define C-style functions with signature equivalent to:
 ```c++
@@ -40,10 +42,14 @@ extern "C" {
 ```
 _Note that these definition are exemples of the simplest way to define them_
 
-## Active Layers
+### Active Layers
 
 An active layer must be a complete implementation in a module of the `ILayer` interface, using the virtual call `onRequest` as its main implementation point.
 
-## Filter Overlays
+### Filter Overlays
 
 A filter overlay must be a complete implementation in a module of the `IOverlay` interface, using the virtual calls `onRequest` and `onResponse` as its main implementation points.
+
+## Core side
+
+A Zia core compatible should use the handler abstraction `Layer` & `Overlay` class to manipulate Module Layers & Overlays, as long as this manipulation follows the principle described in the [Layer Model](LayerModel.md)

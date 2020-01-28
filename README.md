@@ -12,6 +12,10 @@ Group:
 
 This API is allows a Zia core to dynamicaly load & unload modules at runtime.
 
+## Layer Model
+
+A description of the API's Layer Model can be found [here](docs/LayerModel.md)
+
 ## Modules Specs
 
 Modules specifications & cross-modules symbols are defined [here](docs/Modules.md)
