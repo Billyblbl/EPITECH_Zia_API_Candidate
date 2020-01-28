@@ -9,3 +9,9 @@ Group:
 - darius.kohen@epitech.eu,
 - maxime.cailliau@epitech.eu,
 - baptiste.liger@epitech.eu
+
+This API is allows a Zia core to dynamicaly load & unload modules at runtime.
+
+## Modules Specs
+
+Modules specifications & cross-modules symbols are defined [here](docs/Modules.md)
