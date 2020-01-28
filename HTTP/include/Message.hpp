@@ -14,16 +14,37 @@
 namespace HTTP
 {
 
+	///
+	///@brief HTTP Base message class
+	///
+	///
 	class Message {
 		public:
 
+			///
+			///@brief Destroy the Message
+			///
+			///
 			virtual ~Message() = default;
 
 			using HeaderSection = std::map<std::string, std::string>;
 
+			///
+			///@brief Headers of the message
+			///
+			///
 			HeaderSection	Headers;
+
+			///
+			///@brief Body of the message
+			///
+			///
 			std::string		Body;
 
+			///
+			///@brief Get the Start Line of the message
+			///
+			///
 			const std::string &getStartLine();
 
 		protected:
