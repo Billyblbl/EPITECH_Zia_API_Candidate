@@ -1,4 +1,4 @@
-#!zsh
+#!sh
 
 if [ $# -eq 0 ]; then
 	buildType=Debug
