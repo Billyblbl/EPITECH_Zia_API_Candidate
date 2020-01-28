@@ -20,7 +20,8 @@ void		*DestroyOverlay(IOverlay *);
 ```
 for Overlay modules.
 The `Create*` functions each allocate the necessary memory and construct an implementation of their respective interfaces as-if `new` constructed.
-The `Destroy*`functions each destroy and dealocates the memory occupied by an implementation of their respective interfaces, built by their respective `Create*` functions, as-if destroyed by call to `delete`
+The `Destroy*`functions each destroy and dealocates the memory occupied by an implementation of their respective interfaces, built by their respective `Create*` functions, as-if destroyed by call to `delete`.
+
 To ensure symbol preservation against `c++` symbol mangling the definition of these factory function should be placed in an `extern "C"` clause such as
 ```c++
 extern "C" {
