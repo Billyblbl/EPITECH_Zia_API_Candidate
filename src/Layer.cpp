@@ -13,7 +13,13 @@ namespace Zia
 
 	Layer::Layer(const std::string &path):
 		_lib(path),
-		_layer(_lib.call<ILayer *()>(CreateLayerSymbol))
+		_layer(_lib.call<ILayer *()>(CreateLayerSymbol), [this](ILayer *layer){
+			try {
+				_lib.call<void(ILayer *)>(DestroyLayerSymbol, layer);
+			} catch(const std::exception& e) {
+				std::cerr << e.what() << '\n';
+			}
+		})
 	{
 		if (!_layer)
 			throw std::runtime_error(std::string(__func__) + " : Failed to create layer from " + path);

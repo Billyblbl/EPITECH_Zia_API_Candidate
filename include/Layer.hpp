@@ -33,7 +33,7 @@ namespace Zia
 		///
 		///@brief Handes a request
 		///
-		/// Delagates handling to the module's Layer
+		/// Delegates handling to the module's Layer
 		///
 		///@param request Request to be handled
 		///@return std::optional<HTTPResponse> Optional Response, stops layer traversal if returned
@@ -66,8 +66,10 @@ namespace Zia
 
 	private:
 
-		Plug::DynLib				_lib;
-		std::unique_ptr<ILayer>		_layer;
+		using LayerHandle = std::unique_ptr<ILayer, std::function<void(ILayer *)>>;
+
+		Plug::DynLib	_lib;
+		LayerHandle		_layer;
 	};
 
 } // namespace Zia

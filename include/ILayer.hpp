@@ -25,6 +25,12 @@ namespace Zia
 	constexpr auto	CreateLayerSymbol = "CreateLayer";
 
 	///
+	///@brief Symbol used as Layer factory-destructor in module loading
+	///
+	///
+	constexpr auto	DestroyLayerSymbol = "DestroyLayer";
+
+	///
 	///@brief Layer interface
 	///
 	/// Layers are responsible for handling of requests. the request will be passed down

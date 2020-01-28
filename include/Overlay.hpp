@@ -77,8 +77,10 @@ namespace Zia
 
 	private:
 
-		Plug::DynLib				_lib;
-		std::unique_ptr<IOverlay>	_layer;
+		using OverlayHandle = std::unique_ptr<IOverlay, std::function<void(IOverlay *)>>;
+
+		Plug::DynLib	_lib;
+		OverlayHandle	_layer;
 
 	};
 

@@ -13,7 +13,13 @@ namespace Zia
 
 	Overlay::Overlay(const std::string &path):
 		_lib(path),
-		_layer(_lib.call<IOverlay *()>(CreateOverlaySymbol))
+		_layer(_lib.call<IOverlay *()>(CreateOverlaySymbol), [this](IOverlay *overlay){
+			try {
+				_lib.call<void(IOverlay *)>(DestroyOverlaySymbol, overlay);
+			} catch(const std::exception& e) {
+				std::cerr << e.what() << '\n';
+			}
+		})
 	{
 		if (!_layer)
 			throw std::runtime_error(std::string(__func__) + " : Failed to create layer from " + path);

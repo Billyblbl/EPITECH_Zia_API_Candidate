@@ -24,6 +24,12 @@ namespace Zia
 	constexpr auto	CreateOverlaySymbol = "CreateOverlay";
 
 	///
+	///@brief Symbol used as Overlay factory-destructor in module loading
+	///
+	///
+	constexpr auto	DestroyOverlaySymbol = "DestroyOverlay";
+
+	///
 	///@brief Overlay interface
 	///
 	/// Overlays tranforms HTTP requests & reponses before they are passed down
