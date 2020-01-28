@@ -6,7 +6,7 @@ _(See figure 1)._
 
 ## Reception
 
-When a request is received, it is transformed in each of the different overlays before being dispatched to the active layers. This transformation can be anything from logging to decryption.
+When a request is received through an HTTP server, it is transformed in each of the different overlays before being dispatched to the active layers. This transformation can be anything from logging to decryption.
 
 ## Handling
 
@@ -14,7 +14,7 @@ Once passed through all Overlays, the request is handled by the layers one by on
 
 ## Answering
 
-When an answer is generated it is transformed by the overlays in the reversed order in which the associated request came in.
+When an answer is generated it is transformed by the overlays in the reversed order in which the associated request came in, before being sent to the HTTP server to be processed in the network.
 
 ## Model
 
