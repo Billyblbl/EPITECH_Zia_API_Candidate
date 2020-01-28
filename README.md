@@ -27,10 +27,21 @@ At the root of your project's repository, run
 ```
 git submodule add https://github.com/Billyblbl/EPITECH_Zia_API_Candidate.git <directory_name>
 ```
-replacing <directory_name> with the name of the directory you want it to stay in
+replacing **<directory_name>** with the name of the directory you want it to stay in
 
 Then run
 ```
 git submodule update --init --recursive
 ```
 to update the newly added submodule and all of its own submodule dependencies.
+
+## Project Build Configuration
+
+This API is designed around a cmake style build. To include it in your build, simply add the following lines in your project's CMakeLists.txt:
+```cmake
+add_subdirectory(<directory_name>)
+target_link_libraries(<target_name> ZIAAPI)
+```
+replacing **<directory_name>** with the name of the directory of the submodule, and **<target_name>** by the name of the cmake target that you want to link ZIAAPI with
+
+
