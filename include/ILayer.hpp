@@ -8,7 +8,8 @@
 #ifndef ILAYER_HPP_
 #define ILAYER_HPP_
 
-#include <optional>
+// #include <optional>
+#include <memory>
 #include "Request.hpp"
 #include "Response.hpp"
 
@@ -49,9 +50,9 @@ namespace Zia
 			///@brief Handles a request, user implementation point
 			///
 			///@param request Request to be handled
-			///@return std::optional<HTTPResponse> Optional Response, stops layer traversal if returned
+			///@return std::unique_ptr<HTTPResponse> Optional Response, stops layer traversal if returned non-null
 			///
-			virtual std::optional<HTTPResponse>	onRequest(const HTTPRequest &request) = 0;
+			virtual std::unique_ptr<HTTPResponse>	onRequest(const HTTPRequest &request) = 0;
 	};
 
 } // namespace Zia

@@ -25,14 +25,14 @@ namespace Zia
 			throw std::runtime_error(std::string(__func__) + " : Failed to create layer from " + path);
 	}
 
-	HTTPRequest		Overlay::onRequest(HTTPRequest &&request)
+	std::unique_ptr<HTTPRequest>	Overlay::onRequest(std::unique_ptr<HTTPRequest> &&request)
 	{
-		return _layer->onRequest(std::forward<HTTPRequest>(request));
+		return _layer->onRequest(std::forward<std::unique_ptr<HTTPRequest>>(request));
 	}
 
-	HTTPResponse	Overlay::onResponse(HTTPResponse &&response)
+	std::unique_ptr<HTTPResponse>	Overlay::onResponse(std::unique_ptr<HTTPResponse> &&response)
 	{
-		return _layer->onResponse(std::forward<HTTPResponse>(response));
+		return _layer->onResponse(std::forward<std::unique_ptr<HTTPResponse>>(response));
 	}
 
 	IOverlay		&Overlay::getHandle()

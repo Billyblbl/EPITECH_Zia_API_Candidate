@@ -8,6 +8,7 @@
 #ifndef IOVERLAY_HPP_
 #define IOVERLAY_HPP_
 
+#include <memory>
 #include "Request.hpp"
 #include "Response.hpp"
 
@@ -48,17 +49,17 @@ namespace Zia
 			///@brief Transforms a request
 			///
 			///@param request Incoming request
-			///@return HTTPRequest Transformed request
+			///@return std::unique_ptr<HTTPRequest> Transformed request
 			///
-			virtual HTTPRequest		onRequest(HTTPRequest &&request) = 0;
+			virtual std::unique_ptr<HTTPRequest>	onRequest(std::unique_ptr<HTTPRequest> &&request) = 0;
 
 			///
 			///@brief Transforms a response
 			///
 			///@param response Outgoing response
-			///@return HTTPResponse Transformed response
+			///@return std::unique_ptr<HTTPResponse> Transformed response
 			///
-			virtual HTTPResponse	onResponse(HTTPResponse &&response) = 0;
+			virtual std::unique_ptr<HTTPResponse>	onResponse(std::unique_ptr<HTTPResponse> &&response) = 0;
 	};
 
 } // namespace Zia

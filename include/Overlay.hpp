@@ -37,9 +37,9 @@ namespace Zia
 		/// Delagates transformation to the module's Overlay
 		///
 		///@param request Incoming request
-		///@return HTTPRequest Transformed request
+		///@return std::unique_ptr<HTTPRequest> Transformed request
 		///
-		virtual HTTPRequest		onRequest(HTTPRequest &&request) override;
+		virtual std::unique_ptr<HTTPRequest>	onRequest(std::unique_ptr<HTTPRequest> &&request) override;
 
 		///
 		///@brief Transforms a response
@@ -47,9 +47,9 @@ namespace Zia
 		/// Delagates transformation to the module's Overlay
 		///
 		///@param response Outgoing response
-		///@return HTTPResponse Transformed response
+		///@return std::unique_ptr<HTTPResponse> Transformed response
 		///
-		virtual HTTPResponse	onResponse(HTTPResponse &&response) override;
+		virtual std::unique_ptr<HTTPResponse>	onResponse(std::unique_ptr<HTTPResponse> &&response) override;
 
 		///
 		///@brief Get the internal IOverlay object from the module

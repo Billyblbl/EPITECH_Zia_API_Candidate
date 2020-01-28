@@ -25,7 +25,7 @@ namespace Zia
 			throw std::runtime_error(std::string(__func__) + " : Failed to create layer from " + path);
 	}
 
-	std::optional<HTTPResponse>		Layer::onRequest(const HTTPRequest &request)
+	std::unique_ptr<HTTPResponse>		Layer::onRequest(const HTTPRequest &request)
 	{
 		return _layer->onRequest(std::forward<const HTTPRequest>(request));
 	}

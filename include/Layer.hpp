@@ -36,9 +36,9 @@ namespace Zia
 		/// Delegates handling to the module's Layer
 		///
 		///@param request Request to be handled
-		///@return std::optional<HTTPResponse> Optional Response, stops layer traversal if returned
+		///@return std::unique_ptr<HTTPResponse> Optional Response, stops layer traversal if returned non-null
 		///
-		virtual std::optional<HTTPResponse>	onRequest(const HTTPRequest &request) override;
+		virtual std::unique_ptr<HTTPResponse>	onRequest(const HTTPRequest &request) override;
 
 		///
 		///@brief Get the internal ILayer object from the module
