@@ -19,3 +19,18 @@ A description of the API's Layer Model can be found [here](docs/LayerModel.md)
 ## Modules Specs
 
 Modules specifications & cross-modules symbols are defined [here](docs/Modules.md)
+
+## Import
+
+This API is meant to be imported in a project as a git submodule.
+At the root of your project's repository, run
+```
+git submodule add https://github.com/Billyblbl/EPITECH_Zia_API_Candidate.git <directory_name>
+```
+replacing <directory_name> with the name of the directory you want it to stay in
+
+Then run
+```
+git submodule update --init --recursive
+```
+to update the newly added submodule and all of its own submodule dependencies.
